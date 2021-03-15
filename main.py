@@ -3,7 +3,7 @@ from src.parking_client import ClientCarParkingSystem
 
 commands = [
     "Create_parking_lot 6",
-    "Park KA-01-HH-1234 driver_age 21",
+    "Park KA-01-HH-1234 driver_age 18",
     "Park PB-01-HH-1234 driver_age 21",
     "Slot_numbers_for_driver_of_age 21",
     "Park PB-01-TG-2341 driver_age 40",
@@ -15,6 +15,9 @@ commands = [
 
 
 if __name__ == '__main__':
-        print(ClientCarParkingSystem().run_commands(commands))
+
+    with open('input.txt', 'r') as ip_file:
+        commands = ip_file.readlines()
+        ClientCarParkingSystem().run_commands(commands)
 
 
